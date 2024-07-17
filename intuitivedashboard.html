@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intuitive Dashboard - Neo</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: fadeIn 0.5s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.5s ease;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            animation: slideInRight 0.5s ease;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* Dashboard Section Styles */
+        .dashboard {
+            padding: 4rem 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .dashboard-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .dashboard h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .dashboard p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .dashboard-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            animation: zoomIn 0.5s ease;
+        }
+
+        .feature-item img {
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.5s ease;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .footer-links {
+            animation: slideInUp 0.5s ease;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ccc;
+        }
+
+        .footer-contact {
+            animation: slideInRight 0.5s ease;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Neo Logo">
+                <h1>Neo</h1>
+            </div>
+            <ul>
+                <!-- <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="dashboard">
+            <div class="dashboard-content">
+                <h2>Intuitive Dashboard</h2>
+                <p>Gain a comprehensive overview of your business with our intuitive and customizable dashboard.</p>
+            </div>
+            <div class="dashboard-features">
+                <div class="feature-item">
+                    <img src="feature-icon-1.png" alt="Feature 1 Icon">
+                    <h3>Customizable Widgets</h3>
+                    <p>Easily add, remove, and rearrange widgets to personalize your dashboard.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-2.png" alt="Feature 2 Icon">
+                    <h3>Real-Time Data</h3>
+                    <p>Get instant updates on key metrics and performance indicators.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-3.png" alt="Feature 3 Icon">
+                    <h3>Detailed Reporting</h3>
+                    <p>Generate comprehensive reports to track progress and identify trends.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-4.png" alt="Feature 4 Icon">
+                    <h3>Intuitive Interface</h3>
+                    <p>Navigate through the dashboard with ease using a clean and user-friendly interface.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-5.png" alt="Feature 5 Icon">
+                    <h3>Advanced Analytics</h3>
+                    <p>Unlock deeper insights with advanced analytics and data visualization tools.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-6.png" alt="Feature 6 Icon">
+                    <h3>Collaborative Tools</h3>
+                    <p>Work together seamlessly with team members using our collaborative tools.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Neo Logo">
+                <h3>Neo</h3>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Main Street, Anytown USA</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@neo.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Neo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

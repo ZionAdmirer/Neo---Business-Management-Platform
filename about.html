@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Neo - Your SaaS Solution</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: fadeIn 0.5s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.5s ease;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            animation: slideInRight 0.5s ease;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* About Section Styles */
+        .about {
+            padding: 4rem 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .about-mission {
+            background-color: #f8f9fa;
+            padding: 3rem;
+            border-radius: 4px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .about-mission h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .about-mission p {
+            font-size: 1.1rem;
+        }
+
+        .about-values {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .about-values h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 2rem;
+        }
+
+        .value-item {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            animation: zoomIn 0.5s ease;
+        }
+
+        .value-item img {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .value-item h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-item p {
+            font-size: 1.1rem;
+        }
+
+        .about-team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 2rem;
+            margin-top: 3rem;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .team-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .team-member {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            animation: zoomIn 0.5s ease;
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            font-size: 1.1rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.5s ease;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .footer-links {
+            animation: slideInUp 0.5s ease;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ccc;
+        }
+
+        .footer-contact {
+            animation: slideInRight 0.5s ease;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Neo Logo">
+                <h1>Neo</h1>
+            </div>
+            <ul>
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about">
+            <div class="about-content">
+                <h2>About Neo</h2>
+                <p>Neo is a leading SaaS provider that offers innovative solutions to help businesses streamline their operations and achieve their goals. Our mission is to empower companies of all sizes to thrive in the digital age by leveraging cutting-edge technology and data-driven insights.</p>
+            </div>
+            <div class="about-mission">
+                <h3>Our Mission</h3>
+                <p>At Neo, we believe that technology should work for you, not the other way around. Our mission is to develop intuitive and efficient SaaS solutions that help businesses like yours save time, reduce costs, and focus on what really matters - growing your company and delighting your customers.</p>
+            </div>
+            <div class="about-values">
+                <h3>Our Core Values</h3>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <img src="value-icon-1.png" alt="Value 1 Icon">
+                        <h4>Innovation</h4>
+                        <p>We are committed to pushing the boundaries of what's possible, constantly exploring new technologies and solutions to help our clients stay ahead of the curve.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="value-icon-2.png" alt="Value 2 Icon">
+                        <h4>Customer-Centricity</h4>
+                        <p>Our clients are at the heart of everything we do. We strive to deeply understand their needs and deliver tailored solutions that exceed their expectations.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="value-icon-3.png" alt="Value 3 Icon">
+                        <h4>Integrity</h4>
+                        <p>We are committed to the highest standards of ethics and transparency, building long-term relationships based on trust and mutual respect.</p>
+                    </div>
+                    <div class="value-item">
+                        <img src="value-icon-4.png" alt="Value 4 Icon">
+                        <h4>Collaboration</h4>
+                        <p>We believe in the power of teamwork, fostering a culture of open communication and cross-functional collaboration to deliver the best possible solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-team">
+                <h2>Our Team</h2>
+                <div class="team-member">
+                    <img src="team-member-1.png" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Co-Founder and CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member-2.png" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Co-Founder and CTO</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member-3.png" alt="Team Member 3">
+                    <h3>Michael Johnson</h3>
+                    <p>Head of Product</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Neo Logo">
+                <h3>Neo</h3>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <!-- <li><a href="index.html">Home</a></li> -->
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Main Street, Anytown USA</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@neo.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Neo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

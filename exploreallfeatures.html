@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo - Feature Stages</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Feature Stages Section Styles */
+        .feature-stages {
+            padding: 4rem 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .feature-stages h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .stage-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stage-item {
+            margin-bottom: 4rem;
+        }
+
+        .stage-item h3 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .stage-item h3:before {
+            content: "Stage ";
+            color: #007bff;
+        }
+
+        .stage-item p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .stage-item ul {
+            list-style: none;
+            margin: 0 0 2rem;
+            padding: 0;
+        }
+
+        .stage-item li {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .stage-item li:before {
+            content: "✓";
+            color: #007bff;
+            margin-right: 0.5rem;
+        }
+
+        /* Starter Stage */
+        .stage-item.starter h3:before {
+            color: #007bff;
+        }
+
+        .stage-item.starter li:before {
+            color: #007bff;
+        }
+
+        /* Professional Stage */
+        .stage-item.professional h3:before {
+            color: #00b8ff;
+        }
+
+        .stage-item.professional li:before {
+            color: #00b8ff;
+        }
+
+        /* Enterprise Stage */
+        .stage-item.enterprise h3:before {
+            color: #00d1ff;
+        }
+
+        .stage-item.enterprise li:before {
+            color: #00d1ff;
+        }
+
+        .stage-item a {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .stage-item a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">Neo</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="feature-stages">
+            <h2>Feature Stages</h2>
+            <div class="stage-container">
+                <div class="stage-item starter">
+                    <h3>Starter</h3>
+                    <p>The Starter stage includes the following features:</p>
+                    <ul>
+                        <li>1 User</li>
+                        <li>5GB Storage</li>
+                        <li>Basic Features
+                            <ul>
+                                <li>Intuitive dashboard</li>
+                                <li>Limited automation tools</li>
+                                <li>Basic reporting</li>
+                            </ul>
+                        </li>
+                        <li>Limited Integrations</li>
+                        <li>Basic Reporting</li>
+                    </ul>
+                    <p>This stage is ideal for small businesses or individuals just getting started who need the core functionality to manage their operations. The limited user count and storage space ensures it remains cost-effective for those with basic needs.</p>
+                    <a href="#">Get Started</a>
+                </div>
+                <div class="stage-item professional">
+                    <h3>Professional</h3>
+                    <p>The Professional stage includes the following features:</p>
+                    <ul>
+                        <li>5 Users</li>
+                        <li>50GB Storage</li>
+                        <li>Advanced Features
+                            <ul>
+                                <li>Customizable dashboard</li>
+                                <li>Advanced automation</li>
+                                <li>Custom reporting</li>
+                                <li>Collaboration tools</li>
+                            </ul>
+                        </li>
+                        <li>Unlimited Integrations</li>
+                        <li>Custom Reporting</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <p>This stage provides robust capabilities to support growing businesses. The increased user count and storage allows teams to collaborate effectively. Advanced features like custom reporting and unlimited integrations enable businesses to tailor the platform to their specific needs. Priority support ensures issues are resolved quickly.</p>
+                    <a href="#">Get Started</a>
+                </div>
+                <div class="stage-item enterprise">
+                    <h3>Enterprise</h3>
+                    <p>The Enterprise stage includes the following features:</p>
+                    <ul>
+                        <li>Unlimited Users</li>
+                        <li>Unlimited Storage</li>
+                        <li>Premium Features
+                            <ul>
+                                <li>Dedicated account manager</li>
+                                <li>Advanced security</li>
+                                <li>Customizable solutions</li>
+                            </ul>
+                        </li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Advanced Security</li>
+                        <li>Customizable Solutions</li>
+                    </ul>
+                    <p>This stage is designed for large enterprises with complex needs. Unlimited users and storage provide the scalability required to support the entire organization. Premium features like a dedicated account manager, advanced security, and fully customizable solutions ensure the platform aligns perfectly with the business. The advanced security and dedicated support give enterprises the confidence to entrust their mission-critical operations to the platform.</p>
+                    <a href="#">Get Started</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

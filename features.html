@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Features - Your SaaS Solution</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: fadeIn 0.5s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.5s ease;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            animation: slideInRight 0.5s ease;
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #007bff;
+        }
+
+        /* Features Section Styles */
+        .features {
+            padding: 4rem 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .features-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .features p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: center;
+            animation: fadeInUp 0.5s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-item img {
+            height: 80px;
+            margin-bottom: 1.5rem;
+            animation: bounceIn 0.5s ease;
+        }
+
+        .feature-item h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: fadeInDown 0.5s ease;
+        }
+
+        .feature-item p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .feature-item a {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .feature-item a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            animation: slideInLeft 0.5s ease;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .footer-links {
+            animation: slideInUp 0.5s ease;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ccc;
+        }
+
+        .footer-contact {
+            animation: slideInRight 0.5s ease;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Neo Logo">
+                <h1>Neo</h1>
+            </div>
+            <ul>
+                <!-- <li><a href="index.html">Home</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="features">
+            <div class="features-content">
+                <h2>Powerful Features for Your Business</h2>
+                <p>Neo offers a comprehensive suite of features to streamline your operations and boost your productivity.</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="feature-icon-1.png" alt="Feature 1 Icon">
+                    <h3>Intuitive Dashboard</h3>
+                    <p>Gain a comprehensive overview of your business with our intuitive and customizable dashboard.</p>
+                    <a href="intuitivedashboard.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-2.png" alt="Feature 2 Icon">
+                    <h3>Automated Workflows</h3>
+                    <p>Streamline your business processes with our powerful automation tools, saving you time and reducing errors.</p>
+                    <a href="automated.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-3.png" alt="Feature 3 Icon">
+                    <h3>Advanced Analytics</h3>
+                    <p>Make data-driven decisions with our robust analytics and reporting capabilities, helping you identify trends and opportunities.</p>
+                    <a href="AdvancedAnalytics.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-4.png" alt="Feature 4 Icon">
+                    <h3>Seamless Integrations</h3>
+                    <p>Easily connect Neo with your existing tools and systems, creating a seamless and efficient workflow.</p>
+                    <a href="seamless.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-5.png" alt="Feature 5 Icon">
+                    <h3>Collaboration Features</h3>
+                    <p>Foster team collaboration with features like real-time updates, file sharing, and task management.</p>
+                    <a href="collaboration.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-6.png" alt="Feature 6 Icon">
+                    <h3>Customizable Reporting</h3>
+                    <p>Create custom reports and dashboards to track the metrics that matter most to your business.</p>
+                    <a href="CustomizableReporting.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-7.png" alt="Feature 7 Icon">
+                    <h3>Mobile Accessibility</h3>
+                    <p>Access your data and perform key tasks on the go with our mobile-friendly platform.</p>
+                    <a href="mobile.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-8.png" alt="Feature 8 Icon">
+                    <h3>Scalable Infrastructure</h3>
+                    <p>Our platform is designed to scale with your business, ensuring you have the resources you need to grow.</p>
+                    <a href="scalable.html">Learn More</a>
+                </div>
+                <div class="feature-item">
+                    <img src="feature-icon-9.png" alt="Feature 9 Icon">
+                    <h3>Secure Data Management</h3>
+                    <p>Protect your sensitive data with our robust security measures and data backup solutions.</p>
+                    <a href="securedata.html">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Neo Logo">
+                <h3>Neo</h3>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <!-- <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#">Contact</a></li> -->
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Main Street, Anytown USA</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@neo.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Neo. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
